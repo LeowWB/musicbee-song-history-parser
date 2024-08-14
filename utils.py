@@ -1,3 +1,5 @@
+from datetime import date, timedelta
+
 # reads song history txt file and outputs list corresponding to contents
 CHINESE_NUMS = '一二三四五六七八九十'
 
@@ -31,3 +33,9 @@ def parse_date(date):
     else: # english
         raise 'date is in english, pls write the code'
 
+# takes a date and gives u the date _ days ago/after, except it's padded at the end such that it doesn't overflow to a diff year.
+def day_delta(original_date, day_delta):
+    rv = original_date.date() + timedelta(day_delta)
+    rv = max(rv, date(original_date.year, 1, 1))
+    rv = min(rv, date(original_date.year, 12, 31))
+    return str(rv)
