@@ -1,3 +1,3 @@
 # musicbee-song-history-parser
-output parser for musicbee song history plugin.
+ignore this; subsumed under music-scripts repo. formerly output parser for musicbee song history plugin.
 
